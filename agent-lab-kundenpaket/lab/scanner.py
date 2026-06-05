@@ -46,9 +46,9 @@ class AgentSnapshot:
 #   {"name": "mein_qa_agent", "path": "agents/mein_qa.py"},
 # Die Datei muss eine SYSTEM_PROMPT-Variable enthalten, sonst kann der Scanner sie nicht auswerten.
 AGENT_FILES = [
-    {"name": "watcher", "path": "C:/Users/User/Claude/Assistenten/telegram-instagram-bot/bot.py"},
-    {"name": "assistent", "path": "C:/Users/User/Claude/Assistenten/ionos-mail-bot/bot.py"},
-    {"name": "inspiration", "path": "C:/Users/User/Claude/Assistenten/inspiration-bot/bot.py"},
+    {"name": "watcher", "path": "agents/watcher.py"},
+    {"name": "assistent", "path": "agents/assistent.py"},
+    {"name": "inspiration", "path": "agents/inspiration.py"},
 ]
 
 
