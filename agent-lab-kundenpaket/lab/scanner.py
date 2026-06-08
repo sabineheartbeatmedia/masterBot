@@ -57,7 +57,12 @@ class AgentScanner:
 
     def __init__(self, vault_root: str = None):
         if vault_root is None:
-            vault_root = os.path.join(os.path.dirname(__file__), "..", "..", "..")
+            # Paket-Root = eine Ebene ueber lab/ (dort liegt der agents/-Ordner).
+            # Kann per AGENT_LAB_ROOT-Umgebungsvariable ueberschrieben werden.
+            vault_root = os.environ.get(
+                "AGENT_LAB_ROOT",
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."),
+            )
         self._vault_root = Path(vault_root).resolve()
 
     def scan_all(self) -> list[AgentSnapshot]:
